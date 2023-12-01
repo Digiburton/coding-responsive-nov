@@ -13,11 +13,11 @@ body {
 
 /* The width property has been changed to max-width */
 .content-wrapper {
+	max-width: 1200px;
+	width: 90%;
 	display: flex;
 	justify-content: center;
 	flex-flow: row wrap;
-	max-width: 1200px;
-	width: 90%;
 }
 
 h1,
@@ -60,7 +60,7 @@ header {
 
 header h1 {
 	margin: 0;
-	padding: 38px 20px;
+	padding: 38px 0px 20px 0px;
 	width: 100%;
 	border-bottom:#77A466 solid 3px;
 	
@@ -81,7 +81,6 @@ header nav {
 header nav ul {
 	margin: 0;
 	padding: 0;
-	width: 100%;
 	list-style: none;
 	
 }
@@ -91,6 +90,7 @@ header nav ul li {
 	font-weight: 700;
 	text-transform: uppercase;
 	padding: 10px 10px;
+	width: 100%
 }
 
 header nav ul li a {
@@ -104,6 +104,7 @@ header nav ul li a {
 .main-image img {
 	width: 100%;
 	border-bottom: 3px solid #77a466;
+	border-top: 3px solid #77A466;
 }
 
 
@@ -111,6 +112,7 @@ header nav ul li a {
 	color: #45610E;
 	padding: 5px 0;
 }
+
 
 /******** BOTTOM SECTION ********/
 .top-section,
@@ -121,32 +123,35 @@ header nav ul li a {
 }
 
 .bottom-section .content-wrapper {
-	
+	border-top: 5px solid #EEE;
+	border-bottom: 5px solid #EEE;
 }
 
 .section-one,
 .section-two,
 .section-three {
 	box-sizing: border-box;
-	padding: 0 40px;
-	border-bottom: 5px solid #EEE;
+	
+	
 }
 
 .section-one {
 	/*** previous width 29%***/
 	width: 100%;
-	border-top: 5px solid #EEE;
+	
 }
 
 .section-two {
 	/*** previous width 42%***/
 	width: 100%;
-	
+	border-top: 5px solid #EEE;
+	border-bottom: 5px solid #EEE;
 }
 
 .section-three {
 	/*** previous width 29%***/
 	width: 100%;
+	
 }
 
 .bottom-section h3 {
@@ -179,4 +184,65 @@ footer span {
 	text-transform: lowercase;
 	color: #45610E;
 	font-size: 0.875rem;
+}
+/******** TABLET MEDIA QUERY ********/
+@media all and (min-width: 768px) {
+	
+	/******** BOTTOM SECTION ********/
+	.bottom-section .content-wrapper {
+		justify-content: space-evenly;
+	}
+
+	.section-one {
+		width: 26%;
+	}
+
+	.section-two {
+		width: 40%;
+		border-top: none;
+		border-bottom: none;
+		border-right: 5px solid #EEE;
+		border-left: 5px solid #EEE;
+		padding: 0 30px;
+	}
+
+	.section-three {
+		width: 26%;
+	}
+
+	
+	
+}
+
+/******** DESKTOP MEDIA QUERY ********/
+@media all and (min-width: 1200px) {
+
+	/******** GLOBAL STYLES ********/
+	body {
+		font-size: 1em;
+	}
+
+	header .content-wrapper {
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 0;
+	}
+
+	header h1 {
+		width: 30%;
+		padding: 0;
+		border-bottom: none;
+		text-align: left;
+		
+	}
+
+	header nav {
+		width: 21%;
+	}
+
+	header nav ul {
+		display: flex;
+		justify-content: space-between;
+	}
+
 }
